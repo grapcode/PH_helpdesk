@@ -4,12 +4,12 @@ const Card = ({ issue, data, setData }) => {
   //   console.log(issue.ticketId);
   const handleClick = () => {
     const currentData = data.find((elem) => elem.ticketId == issue.ticketId);
+
     if (currentData.status == 'Pending') {
       currentData.status = 'Submitted';
     } else if (currentData.status == 'Submitted') {
       currentData.status = 'Reviewed';
     }
-    currentData.status = 'Dummy';
 
     const restData = data.filter((elem) => elem.ticketId != issue.ticketId);
     console.log({ currentData, restData });
