@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 
 import IssuesManagement from './components/IssuesManagement';
 import { Suspense } from 'react';
+import Loading from './components/Loading';
 
 const fetchIssues = async () => {
   const result = await fetch('/data.json');
@@ -15,7 +16,7 @@ function App() {
     <>
       <Navbar />
 
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<Loading></Loading>}>
         <IssuesManagement fetchPromise={fetchPromise} />
       </Suspense>
 
